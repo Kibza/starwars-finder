@@ -1,47 +1,41 @@
-<div class="mt-5">
-  <div class="col-md-12">
-    <div class="content" role="main">
-      <div class="card">
-        <div class="form-group">
-          <label for="search-text">Search Text</label>
-          <input type="email" class="form-control" id="search-text" aria-describedby="search-text"
-            placeholder="Enter text to search" autofocus>
-        </div>
-        <ul class="list-group list-group-flush">
-          <!-- results of ngFor is passed to appFilter with argument searchText
+<div class="section">
+  <div class="form-group">
+    <label for="search-text">Search Text</label>
+    <input type="email" class="form-control" id="search-text" aria-describedby="search-text"
+      placeholder="Enter text to search" autofocus>
+  </div>
+  <ul class="list-group list-group-flush">
+    <!-- results of ngFor is passed to appFilter with argument searchText
                 *ngFor="let c of characters | appFilter: searchText"
                 -->
-          <li class="list-group-item" *ngFor="let c of charactersQuery">
-            {{c.name}}
-          </li>
-        </ul>
-      </div>
-    </div>
-    <fieldset *ngIf="charactersQuery">
-      <legend class="text-info">List Todo</legend>
-      <div class="table-responsive">
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr class="table-primary">
-              <th scope="col">Id</th>
-              <th scope="col">Title</th>
-              <th scope="col">Description</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let todo of todoSub | async ; trackBy:trackByToodFun;">
-              <td scope="row">{{todo.id}}</td>
-              <td>{{todo.title}}</td>
-              <td>{{todo.description}}</td>
-              <td>
-                <button type="button" class="btn btn-info mr-2" (click)="editRecord(todo.id)">Edit</button>
-                <button type="button" class="btn btn-danger" (click)="deleteRecord(todo.id)">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </fieldset>
-  </div>
+    <li class="list-group-item" *ngFor="let c of charactersQuery">
+      {{c.name}}
+    </li>
+  </ul>
 </div>
+<fieldset *ngIf="charactersQuery">
+  <legend class="text-info">List Todo</legend>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of todoSub | async ; trackBy:trackByToodFun;">
+          <td scope="row">{{todo.id}}</td>
+          <td>{{todo.title}}</td>
+          <td>{{todo.description}}</td>
+          <td>
+            <button type="button" class="btn btn-info mr-2" (click)="editRecord(todo.id)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="deleteRecord(todo.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</fieldset>

@@ -1,6 +1,6 @@
 
-import { todo } from './models/todo.model'
+import { Search } from './models/todo.model';
 
 export interface AppState {
-  readonly tutorial: todo[];
+  readonly tutorial: Search[];
 }

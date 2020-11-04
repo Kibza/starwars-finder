@@ -17,9 +17,8 @@ export class AddComponent implements OnInit {
     ngOnInit() { }
 
     onSubmitAddForm(form) {
-        //console.log('addRecords>>>>');
-        // console.log(form);
-        if(form.valid) {
+        console.log(form);
+        if (form.valid) {
             this.todoService.add(this.todo);
             this.router.navigate(['/list']);
         } else {

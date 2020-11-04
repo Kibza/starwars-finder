@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { todo } from './../models/todo.model';
+import { Search } from './../models/todo.model';
 
 import * as TodoActions from './../actions/todo.actions';
 
@@ -7,15 +7,15 @@ import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 
 
-export interface TodoState extends EntityState<todo> {
+export interface TodoState extends EntityState<Search> {
 
 }
 
-export const adapter: EntityAdapter<todo> =
-  createEntityAdapter<todo>({
+export const adapter: EntityAdapter<Search> =
+  createEntityAdapter<Search>({
   });
 
-const initialState: todo = <todo>{};
+const initialState: Search = <Search>{};
 
 
 export const initialTodoState: TodoState = adapter.getInitialState();
