@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { todo } from './../../models/todo.model';
+import { Search } from './../../models/todo.model';
 import { Router } from '@angular/router';
 import { TodoService } from './../../services/todo.service';
 
@@ -11,8 +11,8 @@ import { TodoService } from './../../services/todo.service';
 
 export class AddComponent implements OnInit {
 
-    public todo = <todo>{};
-    constructor( private router: Router, private todoService:TodoService) { }
+  public todo = <Search>{};
+    constructor( private router: Router, private todoService: TodoService) { }
 
     ngOnInit() { }
 

@@ -1,33 +1,33 @@
-import {  Injectable } from '@angular/core'
-import { Action } from '@ngrx/store'
-import { todo } from './../models/todo.model'
+import { Injectable } from '@angular/core';
+import { Action } from '@ngrx/store';
+import { Search } from './../models/todo.model';
 
 
-export const ADD_TODO       = '[TODO] Add'
-export const REMOVE_TODO    = '[TODO] Remove'
-export const UPDATE_TODO       = '[TODO] Update'
+export const ADD_TODO = '[TODO] Add';
+export const REMOVE_TODO = '[TODO] Remove';
+export const UPDATE_TODO = '[TODO] Update';
 
 
 export class AddTodo implements Action {
-  readonly type = ADD_TODO
+  readonly type = ADD_TODO;
 
-  constructor(public payload: todo) {
+  constructor(public payload: Search) {
 
   }
 }
 
 
 export class UpdateTodo implements Action {
-  readonly type = UPDATE_TODO
+  readonly type = UPDATE_TODO;
 
-  constructor(public id: number,  public changes) {}
+  constructor(public id: number, public changes) { }
 }
 
 export class RemoveTodo implements Action {
-  readonly type = REMOVE_TODO
+  readonly type = REMOVE_TODO;
 
-  constructor(public id: number) {}
+  constructor(public id: number) { }
 }
 
 
-export type Actions = AddTodo | UpdateTodo | RemoveTodo
+export type Actions = AddTodo | UpdateTodo | RemoveTodo;
