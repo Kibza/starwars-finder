@@ -1,28 +1,75 @@
-
-    
-    
-    <div class="mt-5">
-        <div class="col-md-8">
-            <form name="addTodoForm" #addTodoForm="ngForm" (ngSubmit)="onSubmitAddForm(addTodoForm);" novalidat>
-                <fieldset>    	
-    				<legend class="text-info">Add Todo</legend>
-                    <div class="form-group">
-                        <label for="title">Todo Title</label>
-                        <input type="text" class="form-control" #title="ngModel" name="title" id="title" [(ngModel)]="todo.title" placeholder="Enter todo title" required >
-                        <div [hidden]="title.valid || (title.pristine && !addTodoForm.submitted)" class="text-danger">
-                            Todo title is required.
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Todo Description</label>
-                        <textarea class="form-control" #description="ngModel" rows="7" name="description" id="description" [(ngModel)]="todo.description" placeholder="Enter description" required ></textarea>
-                        <div [hidden]="description.valid || (description.pristine && !addTodoForm.submitted)" class="text-danger">
-                            Todo description is required.
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-info">Save</button>
-                </fieldset>				
-            </form>
-        </div>
+<div class="row">
+  <div class="container">
+    <div class="section">
+      <form name="addTodoForm" #addTodoForm="ngForm" (change)="onChangeAddForm(addTodoForm)" novalidat>
+        <fieldset>
+          <legend class="text-info">Character Search</legend>
+          <div class="form-group">
+            <label for="title">Name</label>
+            <input type="text" class="form-control" #title="ngModel" name="title" id="title" [(ngModel)]="todo.title"
+              placeholder="Rick Sánchez">
+            <div [hidden]="title.valid || (title.pristine && !addTodoForm.submitted)" class="text-danger">
+              Todo title is required.
+            </div>
+          </div>
+          <button class="btn waves-effect waves-light" type="submit">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </fieldset>
+      </form>
     </div>
-   
+    <div class="section" *ngIf="character; else allCharacters">
+      <div class="col s12 m4" *ngFor="let k of character">
+      <div class="card hoverable">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="{{k.image}}">
+        </div>
+        <div class="card-content">
+          <p class="card-title truncate activator">{{k.name}}</p>
+          <span class="activator grey-text text-darken-4 ">{{k.status}}<i class="material-icons right">more_vert</i></span>
+        </div>
+        <div class="card-reveal teal white-text">
+          <span class="card-title">{{k.name}}<i class="material-icons right">close</i></span>
+          <ul class="collection">
+            <li class="collection-item teal darken-2">Status -<span class="light">{{k.status}}</span></li>
+            <li class="collection-item teal darken-2">Species -<span class="light">{{k.species}}</span></li>
+            <li class="collection-item teal darken-2">Type -<span class="light">{{k.type}}</span></li>
+            <li class="collection-item teal darken-2">Gender -<span class="light">{{k.gender}}</span></li>
+            <li class="collection-item teal darken-2">Origin Name -<span class="light">{{k.origin.name}}</span></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- results of ngFor is passed to appFilter with argument searchText
+                                *ngFor="let c of characters | appFilter: searchText"
+                             -->
+
+    <ng-template #allCharacters>
+      <div class="col s12 m4" *ngFor="let c of charactersQuery">
+        <div class="card hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{c.image}}">
+          </div>
+          <div class="card-content">
+            <p class="card-title truncate activator">{{c.name}}</p>
+            <span class="activator grey-text text-darken-4 ">{{c.status}}<i
+                class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal teal white-text">
+            <span class="card-title">{{c.name}}<i class="material-icons right">close</i></span>
+            <ul class="collection">
+              <li class="collection-item teal darken-2">Status -<span class="light">{{c.status}}</span></li>
+              <li class="collection-item teal darken-2">Species -<span class="light">{{c.species}}</span></li>
+              <li class="collection-item teal darken-2">Type -<span class="light">{{c.type}}</span></li>
+              <li class="collection-item teal darken-2">Gender -<span class="light">{{c.gender}}</span></li>
+              <li class="collection-item teal darken-2">Origin Name -<span class="light">{{c.origin.name}}</span></li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

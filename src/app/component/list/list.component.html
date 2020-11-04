@@ -1,27 +1,13 @@
 <div class="section">
-  <div class="form-group">
-    <label for="search-text">Search Text</label>
-    <input type="email" class="form-control" id="search-text" aria-describedby="search-text"
-      placeholder="Enter text to search" autofocus>
-  </div>
-  <ul class="list-group list-group-flush">
-    <!-- results of ngFor is passed to appFilter with argument searchText
-                *ngFor="let c of characters | appFilter: searchText"
-                -->
-    <li class="list-group-item" *ngFor="let c of charactersQuery">
-      {{c.name}}
-    </li>
-  </ul>
 </div>
-<fieldset *ngIf="charactersQuery">
-  <legend class="text-info">List Todo</legend>
+<fieldset>
+  <legend class="text-info">Search Log</legend>
   <div class="table-responsive">
     <table class="table table-bordered table-hover">
       <thead>
         <tr class="table-primary">
           <th scope="col">Id</th>
           <th scope="col">Title</th>
-          <th scope="col">Description</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
@@ -31,8 +17,7 @@
           <td>{{todo.title}}</td>
           <td>{{todo.description}}</td>
           <td>
-            <button type="button" class="btn btn-info mr-2" (click)="editRecord(todo.id)">Edit</button>
-            <button type="button" class="btn btn-danger" (click)="deleteRecord(todo.id)">Delete</button>
+            <button type="button" class="" (click)="deleteRecord(todo.id)">Delete</button>
           </td>
         </tr>
       </tbody>

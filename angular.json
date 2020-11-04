@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular7": {
+    "rickmorty": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular7",
+            "outputPath": "dist/rickmorty",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,12 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.css"
             ],
             "scripts": [
-                "node_modules/jquery/dist/jquery.min.js",
-                "node_modules/bootstrap/dist/js/bootstrap.min.js"
+                "node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {
@@ -61,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular7:build"
+            "browserTarget": "rickmorty:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular7:build:production"
+              "browserTarget": "rickmorty:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular7:build"
+            "browserTarget": "rickmorty:build"
           }
         },
         "test": {
@@ -106,7 +104,7 @@
         }
       }
     },
-    "angular7-e2e": {
+    "rickmorty-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -115,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular7:serve"
+            "devServerTarget": "rickmorty:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular7:serve:production"
+              "devServerTarget": "rickmorty:serve:production"
             }
           }
         },
@@ -135,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "angular7"
+  "defaultProject": "rickmorty"
 }

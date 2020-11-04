@@ -2,8 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
-## Blog
-Please check more detail on our blog <a target="_blank" href="http://www.teclogiq.com/blog/todo-angular-app-using-ngrx-entity/">todo-angular-app-using-ngrx-entity</a> 
+## Info
+
+This project is an Exam made by [Kibza](https://kibzaim.life), it uses [The Rick and Morty API](https://rickandmortyapi.com/)!
+Remember to `npm i` before starting!
 
 ## Development server
 
