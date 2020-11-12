@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rickmorty": {
+    "starwars": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rickmorty",
+            "outputPath": "dist/starwars",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -59,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rickmorty:build"
+            "browserTarget": "starwars:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rickmorty:build:production"
+              "browserTarget": "starwars:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rickmorty:build"
+            "browserTarget": "starwars:build"
           }
         },
         "test": {
@@ -104,7 +104,7 @@
         }
       }
     },
-    "rickmorty-e2e": {
+    "starwars-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -113,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rickmorty:serve"
+            "devServerTarget": "starwars:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rickmorty:serve:production"
+              "devServerTarget": "starwars:serve:production"
             }
           }
         },
@@ -133,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "rickmorty"
+  "defaultProject": "starwars"
 }

@@ -16,10 +16,10 @@ export class AddComponent implements OnInit {
   public todo = <Search>{};
   public character: Observable<Character>;
   public charactersQuery: Observable<CharactersQuery>;
-  constructor(private router: Router, private todoService: TodoService, private RickMortyService: ApiService) { }
+  constructor(private router: Router, private todoService: TodoService, private StarWarsService: ApiService) { }
 
   ngOnInit() {
-    this.RickMortyService.request('get', 'character', '').subscribe((data: any) => {
+    this.StarWarsService.request('get', 'character', '').subscribe((data: any) => {
       this.charactersQuery = data.results;
     });
   }
@@ -28,7 +28,7 @@ export class AddComponent implements OnInit {
     if (form.valid) {
       this.todoService.add(this.todo);
       const x = this.todo.title;
-      this.RickMortyService.request('get', 'character/?name=' + x , '').subscribe((res: any) => {
+      this.StarWarsService.request('get', 'character/?name=' + x , '').subscribe((res: any) => {
         this.character = res.results;
 
       });

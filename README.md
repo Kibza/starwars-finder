@@ -1,10 +1,10 @@
-# Rick & Morty Name Search
+# Star Wars Name Search
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
 ## Info
 
-This project is an Exam made by [Kibza](https://kibzaim.life), it uses [The Rick and Morty API](https://rickandmortyapi.com/)!
+This project is an Exam made by [Kibza](https://kibzaim.life), it uses [The Star Wars API](https://rickandmortyapi.com/)!
 Remember to `npm i` before starting!
 
 ## Development server
@@ -29,4 +29,4 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on this, check out the [Kibza](https://kibzaim.life).
