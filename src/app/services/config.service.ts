@@ -12,6 +12,6 @@ export class ConfigService {
     }
 
     public getApiEndPoint() {
-      return 'https://rickandmortyapi.com/api/';
+      return 'http://swapi.dev/api/';
     }
 }

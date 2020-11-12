@@ -1,7 +1,7 @@
 <div class="row">
   <div class="container">
     <div class="section">
-      <form name="addTodoForm" #addTodoForm="ngForm" (change)="onChangeAddForm(addTodoForm)" novalidat>
+      <!-- <form name="addTodoForm" #addTodoForm="ngForm" (change)="onChangeAddForm(addTodoForm)" novalidat>
         <fieldset>
           <legend class="text-info">Character Search</legend>
           <div class="form-group">
@@ -16,31 +16,29 @@
             <i class="material-icons right">send</i>
           </button>
         </fieldset>
-      </form>
+      </form> -->
     </div>
     <div class="section" *ngIf="character; else allCharacters">
       <div class="col s12 m4" *ngFor="let k of character">
-      <div class="card hoverable">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="{{k.image}}">
-        </div>
-        <div class="card-content">
-          <p class="card-title truncate activator">{{k.name}}</p>
-          <span class="activator grey-text text-darken-4 ">{{k.status}}<i class="material-icons right">more_vert</i></span>
-        </div>
-        <div class="card-reveal teal white-text">
-          <span class="card-title">{{k.name}}<i class="material-icons right">close</i></span>
-          <ul class="collection">
-            <li class="collection-item teal darken-2">Status -<span class="light">{{k.status}}</span></li>
-            <li class="collection-item teal darken-2">Species -<span class="light">{{k.species}}</span></li>
-            <li class="collection-item teal darken-2">Type -<span class="light">{{k.type}}</span></li>
-            <li class="collection-item teal darken-2">Gender -<span class="light">{{k.gender}}</span></li>
-            <li class="collection-item teal darken-2">Origin Name -<span class="light">{{k.origin.name}}</span></li>
-          </ul>
+        <div class="card hoverable">
+          <div class="card-content">
+            <p class="card-title truncate activator">{{k.name}}</p>
+            <span class="activator grey-text text-darken-4 ">{{k.status}}<i
+                class="material-icons right">more_vert</i></span>
+          </div>
+          <div class="card-reveal red white-text">
+            <span class="card-title">{{k.name}}<i class="material-icons right">close</i></span>
+            <ul class="collection">
+              <li class="collection-item red darken-2">Status -<span class="light">{{k.status}}</span></li>
+              <li class="collection-item red darken-2">Species -<span class="light">{{k.species}}</span></li>
+              <li class="collection-item red darken-2">Type -<span class="light">{{k.type}}</span></li>
+              <li class="collection-item red darken-2">Gender -<span class="light">{{k.gender}}</span></li>
+              <li class="collection-item red darken-2">Origin Name -<span class="light">{{k.origin.name}}</span></li>
+            </ul>
 
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <!-- results of ngFor is passed to appFilter with argument searchText
                                 *ngFor="let c of characters | appFilter: searchText"
@@ -57,14 +55,14 @@
             <span class="activator grey-text text-darken-4 ">{{c.status}}<i
                 class="material-icons right">more_vert</i></span>
           </div>
-          <div class="card-reveal teal white-text">
+          <div class="card-reveal red white-text">
             <span class="card-title">{{c.name}}<i class="material-icons right">close</i></span>
             <ul class="collection">
-              <li class="collection-item teal darken-2">Status -<span class="light">{{c.status}}</span></li>
-              <li class="collection-item teal darken-2">Species -<span class="light">{{c.species}}</span></li>
-              <li class="collection-item teal darken-2">Type -<span class="light">{{c.type}}</span></li>
-              <li class="collection-item teal darken-2">Gender -<span class="light">{{c.gender}}</span></li>
-              <li class="collection-item teal darken-2">Origin Name -<span class="light">{{c.origin.name}}</span></li>
+              <li class="collection-item red darken-2">Status -<span class="light">{{c.status}}</span></li>
+              <li class="collection-item red darken-2">Species -<span class="light">{{c.species}}</span></li>
+              <li class="collection-item red darken-2">Type -<span class="light">{{c.type}}</span></li>
+              <li class="collection-item red darken-2">Gender -<span class="light">{{c.gender}}</span></li>
+              <li class="collection-item red darken-2">Origin Name -<span class="light">{{c.origin.name}}</span></li>
             </ul>
 
           </div>
